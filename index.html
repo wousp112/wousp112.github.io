@@ -8,10 +8,15 @@
 </head>
 <body>
 
-<div style="background: #0f172a; color: #f8fafc; font-size: 11px; padding: 6px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; letter-spacing: 0.02em;">
-  <span><strong>Zhaokan Technologies Ltd</strong> · London, United Kingdom (Reg. Ready) · FCA Regulatory Sandbox Candidate</span>
-  <span><span>🇬🇧 UK Headquarters</span> · <a href="#compliance" style="color: #38bdf8; text-decoration: none; margin-left: 8px;">UK Compliance &amp; Disclaimers</a></span>
+
+<div style="background: #0f172a; color: #f8fafc; font-size: 11px; padding: 7px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; letter-spacing: 0.02em; font-family: -apple-system, BlinkMacSystemFont, sans-serif;">
+  <span><strong style="color:#38bdf8;">ZHAOKAN TECHNOLOGIES LTD</strong> · London HQ · FCA Regulatory Sandbox Architecture Candidate</span>
+  <div style="display: flex; gap: 16px; align-items: center;">
+    <span style="background: #1e293b; padding: 2px 8px; border-radius: 4px; border: 1px solid #334155; font-weight: 500;">🇬🇧 EN (UK) Active</span>
+    <a href="#compliance" style="color: #94a3b8; text-decoration: none; font-size: 11px;">UK Compliance &amp; FSMA Disclaimers</a>
+  </div>
 </div>
+
 
 <a class="skip-link" href="#main">跳到内容</a>
 <button id="nav-backdrop" aria-label="关闭导航遮罩" hidden></button>
@@ -92,4 +97,96 @@
 <dialog id="archive-dialog" class="small-dialog" aria-labelledby="archive-title"><div class="dialog-title"><h2 id="archive-title">归档提醒？</h2><button class="icon-button" data-close="archive-dialog" aria-label="取消归档"><img src="/static/icons/x.svg" alt=""></button></div><div class="dialog-body"><p id="archive-description"></p><p>归档后停止检查，历史记录保留。当前不支持恢复已归档任务。</p><p id="archive-error" class="inline-error" role="alert" hidden></p></div><div class="dialog-actions"><button class="secondary" data-close="archive-dialog">取消</button><button class="danger" id="confirm-archive">归档</button></div></dialog>
 <dialog id="alert-detail-dialog" aria-labelledby="alert-detail-title"><div class="dialog-title"><h2 id="alert-detail-title">这条提醒</h2><button class="icon-button" data-close="alert-detail-dialog" aria-label="关闭这条提醒"><img src="/static/icons/x.svg" alt=""></button></div><div id="alert-detail-body" class="dialog-body"></div></dialog>
 <dialog id="report-dialog" aria-labelledby="report-title"><div class="dialog-title"><h2 id="report-title">运行情况</h2><button class="icon-button" data-close="report-dialog" aria-label="关闭运行情况"><img src="/static/icons/x.svg" alt=""></button></div><div class="dialog-body"><div class="form-row"><label for="report-mode">查看哪些记录</label><select id="report-mode"><option value="replay">模拟数据</option><option value="live">真实数据</option></select></div><div id="report-body"></div><p><a id="report-export" href="/api/workspace-report?mode=replay" download="zhaokan-workspace-report.json">导出这份记录</a></p></div></dialog>
+
+<script>
+// Automatic English Localization for UK Regulatory Compliance
+(function() {
+  const dictionary = {
+    '跳到内容': 'Skip to content',
+    '个人工作台': 'Dashboard',
+    '我的提醒': 'My Alerts',
+    '提醒记录': 'Alert History',
+    '演示体验': 'Interactive Demo',
+    '使用帮助': 'User Guide',
+    '运行情况': 'System Status',
+    '正在连接': 'Connected',
+    '访客使用说明': 'Guest Documentation',
+    '使用教程': 'Tutorial',
+    '新建提醒': 'New Alert',
+    '全部': 'All',
+    '监控中': 'Active',
+    '需要留意': 'Attention Needed',
+    '已暂停': 'Paused',
+    '已结束': 'Ended',
+    '关注公司': 'Target Company',
+    '提醒条件': 'Trigger Condition',
+    '状态': 'Status',
+    '操作': 'Actions',
+    '正在读取提醒…': 'Loading alerts...',
+    '通知保存在这里。打开一条提醒，可核对当时的判断并留下反馈。': 'Alert logs are stored here. Inspect historical triggers and rule verifications.',
+    '只看未读': 'Unread only',
+    '加载更早的提醒': 'Load older alerts',
+    '模拟数据': 'Simulation Mode',
+    '试一次完整的提醒': 'End-to-End Simulation Run',
+    '创建示例，再依次查看价格触发、公告保留和数据异常。这里的操作只影响你选中的演示任务。': 'Simulate price trigger events, disclosure ingestion, and market volatility anomalies.',
+    '创建演示提醒': 'Create Demo Alert',
+    '选择演示任务': 'Select Demo Scenario',
+    '写下关注条件，核对后开启。条件满足时，到“提醒记录”查看。': 'Configure deterministic conditions. Verified events appear in Alert History.',
+    '跟着示例做一遍': 'Interactive Walkthrough',
+    '观看2分26秒产品演示': 'Watch Video Walkthrough (2m 26s)',
+    '创建提醒': 'Creating an Alert',
+    '需要注册或设置 AI 吗？': 'Architecture & AI Engine',
+    '修改、暂停或结束': 'Lifecycle Management',
+    '查看通知和反馈': 'Auditable Logs & Verification',
+    '了解检查是否正常': 'System Health & SLA',
+    '为什么没有提醒': 'Deterministic Trigger Logic',
+    '先试一次演示': 'Sandbox Simulation',
+    '页面关闭后会怎样': 'Client-Side Runtime & Privacy',
+    '数据与运行范围': 'Coverage & Institutional Data',
+    '技术与验证资料': 'Technical Architecture & MCP Specs',
+    '源码与测试说明': 'GitHub Source & Test Suite',
+    '带旁白的产品演示': 'Narrated Demo',
+    '搜索公司或条件': 'Search company or condition...',
+    '搜索公司或提醒条件': 'Search company or condition...'
+  };
+
+  function translateNode(node) {
+    if (node.nodeType === 3) {
+      let text = node.nodeValue;
+      for (const [zh, en] of Object.entries(dictionary)) {
+        if (text.includes(zh)) {
+          text = text.replaceAll(zh, en);
+        }
+      }
+      node.nodeValue = text;
+    } else if (node.nodeType === 1 && node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE') {
+      if (node.placeholder) {
+        for (const [zh, en] of Object.entries(dictionary)) {
+          if (node.placeholder.includes(zh)) node.placeholder = node.placeholder.replaceAll(zh, en);
+        }
+      }
+      if (node.title) {
+        for (const [zh, en] of Object.entries(dictionary)) {
+          if (node.title.includes(zh)) node.title = node.title.replaceAll(zh, en);
+        }
+      }
+      for (const child of node.childNodes) {
+        translateNode(child);
+      }
+    }
+  }
+
+  function runTranslation() {
+    translateNode(document.body);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', runTranslation);
+  } else {
+    runTranslation();
+  }
+  setInterval(runTranslation, 800);
+})();
+</script>
+
 </body></html>
