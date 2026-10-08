@@ -1,12 +1,18 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="设置股价与公告提醒，随时查看监控状态和检查记录。">
-<title>我的提醒 · 照看</title>
+<meta name="description" content="Zhaokan | Deterministic AI-Powered Investment Monitoring & Risk Radar. Operating in London, United Kingdom.">
+<title>Zhaokan · AI Investment Monitoring & Risk Radar (UK)</title>
 <link rel="stylesheet" href="/static/style.css?v=20260922-1"><script defer src="/static/presentation.js?v=20260922-1"></script><script defer src="/static/onboarding.js?v=20260922-1"></script><script defer src="/static/sites-runtime.js?v=1"></script><script defer src="/static/app.js?v=20260923-1"></script>
 </head>
 <body>
+
+<div style="background: #0f172a; color: #f8fafc; font-size: 11px; padding: 6px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; letter-spacing: 0.02em;">
+  <span><strong>Zhaokan Technologies Ltd</strong> · London, United Kingdom (Reg. Ready) · FCA Regulatory Sandbox Candidate</span>
+  <span><span>🇬🇧 UK Headquarters</span> · <a href="#compliance" style="color: #38bdf8; text-decoration: none; margin-left: 8px;">UK Compliance &amp; Disclaimers</a></span>
+</div>
+
 <a class="skip-link" href="#main">跳到内容</a>
 <button id="nav-backdrop" aria-label="关闭导航遮罩" hidden></button>
 <aside class="sidebar" id="sidebar" aria-label="主导航">
@@ -47,7 +53,15 @@
 <article><h3>数据与运行范围</h3><p>评审体验站支持列表中的12只A股，所有行情、公告和量比均为明确标注的模拟数据，只用于体验规则核对、触发、去重和证据链。</p><p>本页面托管在 Sites，不依赖候选人的电脑。真实数据接入与长期调度的实现边界见源码和测试说明。</p></article>
 <details class="technical"><summary>技术与验证资料</summary><p>AI只提取规则，比较和提醒由程序执行。规则在激活前由用户确认。每轮判断保留来源、时间与规则版本，原始记录可导出。</p><p id="health-detail"></p><p><a href="https://github.com/wousp112/zhaokan-investment-radar" target="_blank" rel="noopener">源码与测试说明</a> · <a href="/static/demo.html" target="_blank" rel="noopener">带旁白的产品演示</a></p><p>含中文旁白、字幕和重点放大。画面来自实际操作，行情使用模拟数据。</p></details>
 </section>
-<footer>仅监控客观事实，不构成投资建议。</footer>
+
+<footer style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 24px 20px; font-size: 12px; color: #64748b; line-height: 1.6; text-align: center;" id="compliance">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <p><strong>Regulatory &amp; Compliance Statement (United Kingdom)</strong></p>
+    <p>Zhaokan is an objective, deterministic algorithmic investment monitoring and corporate filing analytics platform engineered in London, UK. <strong>Zhaokan does not provide financial advice, investment recommendations, or asset management services</strong> within the meaning of the Financial Services and Markets Act 2000 (FSMA). All data processing and alerting rules are executed deterministically based on user-configured criteria.</p>
+    <p style="margin-top: 8px;">© 2024–2026 Zhaokan Technologies. Registered in England &amp; Wales. 71–75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom. Powered by Claude API &amp; Anthropic Model Context Protocol (MCP).</p>
+  </div>
+</footer>
+
 </main>
 <div id="toast" role="status" aria-live="polite" hidden><span id="toast-text"></span><button class="icon-button" id="close-toast" aria-label="关闭提示"><img src="/static/icons/x.svg" alt=""></button></div>
 <dialog id="welcome-dialog" aria-labelledby="welcome-title" aria-describedby="welcome-description">
